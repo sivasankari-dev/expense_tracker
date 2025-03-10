@@ -1,16 +1,16 @@
 <div class="form-container" >
     <h3 class="form-title">Add New Income Transaction</h3>
     <div>
-        <form #myForm="ngForm" (ngSubmit)="handleIncomeAction()">
+        <form #incomeForm="ngForm" (ngSubmit)="handleIncomeAction(incomeForm)">
             <p>
            
                 <label for="amount">Amount</label>
-                <input type="text" name="amount" id="amount" />
+                <input type="text" name="amount" id="amount" [(ngModel)]="income_amount"  />
             </p>
            
            <p>
                 <label for="income_type">Income Type</label>
-                <select  name="income_type" id="income_type">
+                <select  name="income_type" id="income_type" [(ngModel)]="income_type" >
                     <option value="salary">Salary</option>
                     <option value="allowance">Allowance</option>
                     <option value="bonus">Bonus</option>
@@ -19,7 +19,7 @@
             </p>
             <p>
                 <label for="payment_type">Payment Method</label>
-                <select  name="payment_type" id="payment_type" >
+                <select  name="payment_type" id="payment_type" [(ngModel)]="payment_type" >
                     <option value="Cash Payment">Cash Payment</option>
                     <option value="Card Payment">Card Payment</option>
                     <option value="UPI">UPI</option>
@@ -31,10 +31,11 @@
                 <input type="date" 
                        name="date" 
                        id="date" 
-                       [(ngModel)]="expense_date" />
+                       [(ngModel)]="income_date" 
+                       [max]="maxDate"/>
             </p>
             <p class="actions">
-                <button type="submit" [disabled]="myForm.invalid">Submit</button>
+                <button type="submit" [disabled]="incomeForm.invalid">Submit</button>
             </p>
         </form>
     </div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TrackerService } from '../../services/tracker/tracker.service';
 import { Transaction } from '../../classes/transaction/transaction';
 import { Router } from '@angular/router';
@@ -14,43 +14,35 @@ import { Router } from '@angular/router';
 })
 export class IncomeActionComponent {
 
-  expense_date='';
+  income_date='';
+  income_amount=0;
+  income_type='';
+  payment_type='';
 
   private _trackerServ= new TrackerService;
   private _router= new Router;
   
   newTransaction!:Transaction;
 
-  // incomeForm:FormGroup;
+  maxDate: string =  new Date().toISOString().split('T')[0];
 
-  // dateNotInFutureValidator(): ValidatorFn {
-  //   return (control: AbstractControl): ValidationErrors | null => {
-  //     const currentDate = new Date();
-  //     const selectedDate = new Date(control.value);
-  
-  //     if (selectedDate > currentDate) {
-  //       return { futureDate: true };
-  //     }
-  //     return null;
-  //   };
-  // }
+  handleIncomeAction(incomeForm:any){
 
+    // console.log(incomeForm.value);
 
-  handleIncomeAction(){
-
-    // if (this.incomeForm.valid) {
-    //   // assigns values to a new object of type transaction
-    //   this.newTransaction={
-    //   amount: this.incomeForm.get('amount')?.value,
-    //   category: this.incomeForm.get('income_type')?.value,
-    //   paymentMethod: this.incomeForm.get('payment_type')?.value,
-    //   date: this.incomeForm.get('date')?.value,
-    //   type:'income', // gives the type income to the transaction
-    //   }
-    //   // add the new transaction to the array of transactions by tracker service
-    //   this._trackerServ.addTransaction(this.newTransaction);
-    // }
-    // this._router.navigate(['/overview']); // navigates to the overview page on submitting the form
+    if (incomeForm.valid) {
+      // assigns values to a new object of type transaction
+      this.newTransaction={
+      amount: this.income_amount,
+      category: this.income_type,
+      paymentMethod: this.payment_type,
+      date: new Date(this.income_date),
+      type:'income', // gives the type income to the transaction
+      }
+      // add the new transaction to the array of transactions by tracker service
+      this._trackerServ.addTransaction(this.newTransaction);
+    }
+    this._router.navigate(['/summary']); // navigates to the overview page on submitting the form
 
   }
 

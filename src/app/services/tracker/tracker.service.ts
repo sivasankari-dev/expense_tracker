@@ -1,4 +1,4 @@
-import {  inject, Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Transaction } from '../../classes/transaction/transaction';
 
 @Injectable({

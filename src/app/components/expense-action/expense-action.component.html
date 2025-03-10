@@ -1,16 +1,16 @@
 <div class="form-container" >
     <h3 class="form-title">Add New Expense Transaction</h3>
     <div>
-        <form #myForm="ngForm">
+        <form #expenseForm="ngForm" (ngSubmit)="handleExpenseAction(expenseForm)">
             <p>
            
                 <label for="amount">Amount</label>
-                <input type="text" name="amount" id="amount" />
+                <input type="text" name="amount" id="amount" [(ngModel)]="expense_amount"  />
             </p>
            
            <p>
                 <label for="type">Expense Type</label>
-                <select  name="type" id="type">
+                <select  name="type" id="type" [(ngModel)]="expense_type" >
                     <option value="food and drinks">Food and Drinks</option>
                     <option value="shopping">Shopping</option>
                     <option value="transportation">Transportation</option>
@@ -23,7 +23,7 @@
             </p>
             <p>
                 <label for="type">Payment Method</label>
-                <select  name="type" id="type" >
+                <select  name="type" id="type" [(ngModel)]="payment_type">
                     <option value="Cash Payment">Cash Payment</option>
                     <option value="Card Payment">Card Payment</option>
                     <option value="UPI">UPI</option>
@@ -32,10 +32,14 @@
             </p>
             <p>
                 <label for="Date">Date</label>
-                <input type="date" name="date" id="date" />
+                <input type="date" 
+                       name="date" 
+                       id="date" 
+                       [(ngModel)]="expense_date" 
+                       [max]="maxDate"/>
             </p>
             <p class="actions">
-                <button type="submit" [disabled]="myForm.invalid">Submit</button>
+                <button type="submit" [disabled]="expenseForm.invalid">Submit</button>
             </p>
         </form>
     </div>
