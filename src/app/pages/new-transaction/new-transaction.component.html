@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="header">
+      <div class="expense-button-container">
+        <div class="expense-button" (click)="choseExpenseAction()" [ngClass]="{'active': expenseActionChosen}">
+          Expense
+        </div>
+      </div>
+      <div class="income-button-container">
+        <div class="income-button" (click)="choseIncomeAction()" [ngClass]="{'active': incomeActionChosen}">
+          Income
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- expense transaction form -->
+<app-expense-action *ngIf="expenseActionChosen"></app-expense-action>
+<!-- income transaction form -->
+<app-income-action *ngIf="incomeActionChosen"></app-income-action>

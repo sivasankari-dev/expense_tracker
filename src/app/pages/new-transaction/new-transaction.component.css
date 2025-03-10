@@ -1,0 +1,42 @@
+ 
+  .header {
+    height: 8rem; /* h-32 converted to rem */
+    background-color: rgb(243, 244, 246); /* bg-gray-100 */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .expense-button-container,
+  .income-button-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .income-button-container {
+    border-left: 2px solid black; /* border-l-2 border-black */
+  }
+  
+  .expense-button,
+  .income-button {
+    padding: 0.75rem 1.5rem; /* px-6 py-3 converted to rem */
+    color: #4a4a4a;
+    border-radius: 30rem; /* rounded-full */
+    font-weight: bold; /* font-bold */
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    transition: all 0.2s ease-in-out; /* duration-200 */
+  }
+  
+  .expense-button:hover,
+  .income-button:hover {
+    box-shadow: 0 0 0 8px rgba(156, 163, 175, 0.3); /* md:hover:ring-8 ring-gray-500 ring-opacity-30 */
+  }
+  
+  .expense-button.active,
+  .income-button.active {
+    background-color: #3f93a3;
+    color: white;
+  }

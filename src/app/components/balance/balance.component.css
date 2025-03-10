@@ -1,0 +1,111 @@
+.summary-section {
+    background-color: #f0f0f0; /*Light gray background */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .summary-container {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Adjust width as needed */
+    max-width: 1200px;
+  }
+  
+  .balance-small {
+    display: none; /* Hide the small balance title, as it's not in the image */
+  }
+  
+  .summary-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .stat-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expense-box,
+  .income-box {
+    /* background-color: #f9f9f9; Light background for expense/income boxes */
+    background-color: rgba(63, 147, 163, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px; /* Adjust width as needed */
+  }
+  
+  .balance-large {
+    /* background-color: #fff; */
+    background-color: rgba(63, 147, 163, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; /* Adjust width as needed */
+  }
+  
+  .stat-title,
+  .balance-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .stat-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stat-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  
+  .expense-icon {
+    background-color: #fdd; /* Light red background for expense icon */
+  }
+  
+  .income-icon {
+    background-color: #dfd; /* Light green background for income icon */
+  }
+  
+  .stat-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .stat-amount,
+  .balance-amount {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  
+  .currency-symbol {
+    margin-right: 5px;
+  }
+  
+  /* Specific styling for the large balance */
+  .balance-large .balance-title {
+    font-size: 1.5rem;
+  }
+  
+  .balance-large .balance-amount {
+    font-size: 2rem;
+  }
+  
+  /* Adjust icon colors */
+  .expense-icon i {
+    color: red;
+  }
+  
+  .income-icon i {
+    color: green;
+  }

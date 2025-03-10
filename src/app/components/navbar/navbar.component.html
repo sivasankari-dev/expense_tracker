@@ -1,0 +1,25 @@
+<nav>
+<!-- Logo     -->
+    <div class = "logo" [routerLink]="['/summary']">
+        <img src = "../assets/wallet.png" alt = "Wallet Image" />
+        <h1>Expense Tracker</h1>
+    </div>
+    <div class="navigation">
+        <div class="responsive-icon" (click)="toggleMenu()">
+            <i class="fas"
+             [ngClass]="{'fa-bars': !isMenuOpen, 'fa-times': isMenuOpen}" ></i>
+        </div>
+            <ul class="navigation-menu" [ngClass]="{'active': isMenuOpen}">
+                <li class="navigation-item" routerLinkActive="active-link" [routerLink]="['/summary']" (click)="closeMenu()">
+                    <a>Summary</a>
+                </li>
+                <li class="navigation-item" routerLinkActive="active-link" [routerLink]="['/report']" (click)="closeMenu()">
+                    <a>Report</a>
+                </li>
+                <li class="navigation-item" routerLinkActive="active-link" [routerLink]="['/budget']" (click)="closeMenu()">
+                    <a>Budget</a>
+                </li>
+            </ul>
+        </div>
+    
+</nav>

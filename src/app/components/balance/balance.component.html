@@ -1,0 +1,39 @@
+<section class="summary-section">
+    <div class="summary-container">
+      <div class="balance-small">
+        <h5 class="balance-title">
+          Total Balance<span class="currency-symbol">₹</span>{{ totalAmount }}
+        </h5>
+      </div>
+      <div class="summary-stats">
+        <div class="expense-box stat-box">
+          <h5 class="stat-title">Expense</h5>
+          <div class="stat-value">
+            <div class="stat-icon expense-icon">
+              <i class="fa-solid fa-arrow-down"></i>
+            </div>
+            <p class="stat-amount">
+              <span class="currency-symbol">₹</span>{{ totalExpense }}
+            </p>
+          </div>
+        </div>
+        <div class="balance-large stat-box">
+          <h5 class="balance-title">Total Balance</h5>
+          <p class="balance-amount">
+            <span class="currency-symbol">₹</span>{{ totalAmount }}
+          </p>
+        </div>
+        <div class="income-box stat-box">
+          <h5 class="stat-title">Income</h5>
+          <div class="stat-value">
+            <div class="stat-icon income-icon">
+              <i class="fa-solid fa-arrow-up"></i>
+            </div>
+            <p class="stat-amount">
+              <span class="currency-symbol">₹</span>{{ totalIncome }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
