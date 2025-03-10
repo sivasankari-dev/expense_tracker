@@ -45,8 +45,12 @@ export class TrackerService {
         for (const transaction of this.getTransactions()) {
             if (transaction.type === 'expense') {
                 totalExpense += transaction.amount;
+                // console.log("Expense:",totalExpense);
+                // console.log("Amount:",transaction.amount);
+                // console.log("type:",typeof(transaction.amount));
             } else {
                 totalIncome += transaction.amount;
+                console.log("Income:",totalIncome);
             }
         }
 
