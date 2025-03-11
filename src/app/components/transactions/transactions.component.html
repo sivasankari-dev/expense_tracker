@@ -1,0 +1,78 @@
+<section>
+    <div>
+        <h3>Filter Search</h3>
+    </div>
+    <div>
+        <div>
+            <div>
+                <label for="date-from">From:</label>
+                <input type="date" [(ngModel)]="dateFromSearch" name="date-from" id="date-from">
+            </div>
+            <div>
+                <label for="date-to">To:</label>
+                <input type="date" [(ngModel)]="datetoSearch" name="date-from" id="date-to">
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="category-search">Category:</label>
+                <select [(ngModel)]="categorySearch" name="category-search" id="category-search">
+                    <option value="food and drink">Food and drink</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="housing">Housing</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="education">Education</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="car">Car</option>
+                </select>
+            </div>
+            <div>
+                <label for="amount-search">Amount:</label>
+                <input type="search" [(ngModel)]="amountSearch" name="amount-search" placeholder="Enter amount" id="amount-search">
+            </div>
+            <div>
+                <label for="payment-search">Payment:</label>
+                <select [(ngModel)]="paymentSearch" name="payment-search" id="payment-search">
+                    <option value="Cash Payment">Cash Payment</option>
+                    <option value="Card Payment">Card Payment</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Net Banking">Net Banking</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button (click)="clearFilter()">Clear</button>
+        </div>
+    </div>
+    <div>
+        <h3>My Transactions</h3>
+    </div>
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transactionItem of transactionsTable | categorySearch : categorySearch
+                                    | paymentSearch : paymentSearch | amountSearch : amountSearch | dateSearch : dateFromSearch : datetoSearch">
+                        <td>{{transactionItem.date}}</td>
+                        <td>{{transactionItem.category}}</td>
+                        <td [ngClass]="transactionItem.type === 'income'? 'income-amount': 'expense-amount'">
+                            <i *ngIf="transactionItem.type == 'income'" class="fa-solid fa-plus"></i>
+                            <i *ngIf="transactionItem.type == 'expense'" class="fa-solid fa-minus"></i>
+                            &nbsp;<i class="fa fa-inr">&thinsp;</i>{{transactionItem.amount}}
+                        </td>
+                        <td>{{transactionItem.paymentMethod}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

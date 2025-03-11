@@ -2,10 +2,10 @@
     <h3 class="form-title">Add New Income Transaction</h3>
     <div>
         <form #incomeForm="ngForm" (ngSubmit)="handleIncomeAction(incomeForm)">
-            <p>
+            <p class="amount">
            
-                <label for="amount">Amount</label>
-                <input type="number" name="amount" id="amount" [(ngModel)]="income_amount"  />
+                <label for="amount">Amount (₹)</label>
+                <input type="number" name="amount" id="amount" [(ngModel)]="income_amount" />
             </p>
            
            <p>
@@ -27,7 +27,7 @@
                 </select>    
             </p>
             <p>
-                <label for="Date">Date</label>
+                <label for="date">Date</label>
                 <input type="date" 
                        name="date" 
                        id="date" 

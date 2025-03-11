@@ -4,7 +4,7 @@
         <form #expenseForm="ngForm" (ngSubmit)="handleExpenseAction(expenseForm)">
             <p>
            
-                <label for="amount">Amount</label>
+                <label for="amount">Amount (₹)</label>
                 <input type="number" name="amount" id="amount" [(ngModel)]="expense_amount"  />
             </p>
            
@@ -22,8 +22,8 @@
                 </select>    
             </p>
             <p>
-                <label for="type">Payment Method</label>
-                <select  name="type" id="type" [(ngModel)]="payment_type">
+                <label for="payment_type">Payment Method</label>
+                <select  name="payment_type" id="payment_type" [(ngModel)]="payment_type">
                     <option value="Cash Payment">Cash Payment</option>
                     <option value="Card Payment">Card Payment</option>
                     <option value="UPI">UPI</option>
@@ -31,7 +31,7 @@
                 </select>    
             </p>
             <p>
-                <label for="Date">Date</label>
+                <label for="date">Date</label>
                 <input type="date" 
                        name="date" 
                        id="date" 
